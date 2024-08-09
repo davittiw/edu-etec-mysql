@@ -54,3 +54,17 @@ direto.
 => Por padrão o MySQL utiliza o sinal de ponto e vírgula como delimitador de comandos, separando as instruções a serem executadas. No entanto, dentro do corpo do Stored Procedure será necessário separar algumas instruções internamente utilizando esse mesmo sinal, por isso é preciso inicialmente alterar o 
 delimitador padrão do MySQL (neste caso, para $$) e ao fim da criação do procedimento, restaurar 
 seu valor padrão.
+
+## Agenda 2: Funções
+=> Procedures e Funções são até um pouco similares, mas possuem aplicações diferentes. São invocadas de formas diferentes e uma função é usada para gerar um valor que pode ser usado em uma expressão. Esse valor geralmente é baseado em um ou mais parâmetros fornecidos à função.
+
+```php
+    delimiter $$
+    create function nome_funcao ([parâmetros])
+    returns tipo_dados
+    begin
+        /* corpo da função*/
+    return <expressão ou valor ou conteúdo da variável de retorno>;
+    end $$
+    delimiter;
+``
